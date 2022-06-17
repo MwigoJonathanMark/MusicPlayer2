@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="687.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="musicplayer2.FXMLController">
+   <top>
+      <Pane prefHeight="46.0" prefWidth="687.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="46.0" prefWidth="694.0" style="-fx-background-color: #0c4d5c;">
+               <children>
+                  <Pane prefHeight="46.0" prefWidth="82.0" />
+                  <Label prefHeight="46.0" prefWidth="186.0" text="Music Player" textFill="#f2f4f5">
+                     <font>
+                        <Font size="31.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="41.52" radius="20.26" spread="0.49" width="41.52" />
+                     </effect>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+   </top>
+   <left>
+      <VBox prefHeight="510.0" prefWidth="120.0" style="-fx-background-color: #949e9c;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="playlistBtn" blendMode="SRC_ATOP" mnemonicParsing="false" onMouseClicked="#playlistBtnClicked" onMouseEntered="#playlistBtnEntered" onMouseExited="#playlistBtnExited" prefHeight="62.0" prefWidth="122.0" style="-fx-background-radius: 0px; -fx-background-color: #0c4d5c;" text="PlayList" textFill="#ffffff">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="currentPlayBtn" layoutX="10.0" layoutY="258.0" mnemonicParsing="false" onMouseClicked="#currentPlayBtnClicked" onMouseEntered="#currentPlayBtnEntered" onMouseExited="#currentPlayBtnExited" prefHeight="62.0" prefWidth="122.0" style="-fx-background-radius: 0px; -fx-background-color: #0c4d5c;" text="Current Play" textFill="#ffffff">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Button fx:id="addFileBtn" layoutX="10.0" layoutY="72.0" mnemonicParsing="false" onMouseClicked="#addFileBtnClicked" onMouseEntered="#addFileBtnEntered" onMouseExited="#addFileBtnExited" prefHeight="62.0" prefWidth="122.0" style="-fx-background-radius: 0px; -fx-background-color: #0c4d5c;" text="Add File" textFill="#ffffff">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Button fx:id="addFolderBtn" layoutX="10.0" layoutY="134.0" mnemonicParsing="false" onMouseClicked="#addFolderBtnClicked" onMouseEntered="#addFolderBtnEntered" onMouseExited="#addFolderBtnExited" prefHeight="62.0" prefWidth="122.0" style="-fx-background-radius: 0px; -fx-background-color: #0c4d5c;" text="Add Folder" textFill="#ffffff">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Button fx:id="removeFileBtn" layoutX="10.0" layoutY="258.0" mnemonicParsing="false" onMouseClicked="#removeFileBtnClicked" onMouseEntered="#removeFileBtnEntered" onMouseExited="#removeFileBtnExited" prefHeight="62.0" prefWidth="122.0" style="-fx-background-radius: 0px; -fx-background-color: #0c4d5c;" text="Remove File" textFill="#ffffff">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="settingsBtn" layoutX="10.0" layoutY="196.0" mnemonicParsing="false" onMouseClicked="#settingsBtnClicked" onMouseEntered="#settingsBtnEntered" onMouseExited="#settingsBtnExited" prefHeight="62.0" prefWidth="122.0" style="-fx-background-radius: 0px; -fx-background-color: #0c4d5c;" text="Settings" textFill="#ffffff">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+         </children>
+      </VBox>
+   </left>
+   <bottom>
+      <HBox prefHeight="120.0" prefWidth="200.0" style="-fx-background-color: #949e9c;" BorderPane.alignment="CENTER">
+         <children>
+            <Pane prefHeight="120.0" prefWidth="161.0">
+               <effect>
+                  <DropShadow spread="0.22" />
+               </effect>
+               <children>
+                  <Label fx:id="currentSongLbl" layoutX="3.0" layoutY="35.0" prefHeight="64.0" prefWidth="153.0" text="Audio" textFill="#fcf8f8">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+               </children></Pane>
+            <VBox prefHeight="120.0" prefWidth="345.0">
+               <children>
+                  <Pane prefHeight="48.0" prefWidth="319.0" />
+                  <HBox prefHeight="42.0" prefWidth="319.0">
+                     <children>
+                        <Label fx:id="currentTimeLbl" prefHeight="20.0" prefWidth="62.0" text="0:0" textFill="#f5efef">
+                           <effect>
+                              <DropShadow height="18.07" radius="7.68" spread="0.55" width="14.65" />
+                           </effect>
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Pane layoutX="219.0" layoutY="10.0" prefHeight="17.0" prefWidth="13.0" />
+                        <Slider fx:id="timeSeeker" onMouseClicked="#timeSeekerClicked" onMouseDragged="#timeSeekerDragged" prefHeight="14.0" prefWidth="208.0">
+                           <effect>
+                              <DropShadow />
+                           </effect></Slider>
+                        <Pane layoutX="10.0" layoutY="10.0" prefHeight="20.0" prefWidth="4.0" />
+                        <Label fx:id="defaultTimeLbl" prefHeight="20.0" prefWidth="59.0" text="0:0" textFill="#f2eaea">
+                           <effect>
+                              <DropShadow height="15.14" radius="7.07" spread="0.46" width="15.14" />
+                           </effect>
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Pane layoutX="232.0" layoutY="10.0" prefHeight="20.0" prefWidth="0.0" />
+                     </children>
+                  </HBox>
+                  <Pane prefHeight="42.0" prefWidth="319.0" />
+                  <HBox prefHeight="100.0" prefWidth="309.0">
+                     <children>
+                        <Button fx:id="shuffleBtn" mnemonicParsing="false" onMouseClicked="#shuffleBtnClicked" onMouseEntered="#shuffleBtnEntered" onMouseExited="#shuffleBtnExited" prefHeight="42.0" prefWidth="63.0" style="-fx-background-radius: 0px; -fx-background-color: #0c4d5c; -fx-border-radius: 10px;" text="Shuffle" textFill="#ffffff">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                           <font>
+                              <Font size="13.0" />
+                           </font></Button>
+                        <Pane prefHeight="64.0" prefWidth="5.0" />
+                        <Button fx:id="previousBtn" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onKeyPressed="#pKeyPressed" onMouseClicked="#previousBtnClicked" onMouseEntered="#previousBtnEntered" onMouseExited="#previousBtnExited" prefHeight="42.0" prefWidth="63.0" style="-fx-background-radius: 0px; -fx-background-color: #0c4d5c; -fx-border-radius: 5px;" text="Previous" textFill="#ffffff">
+                           <effect>
+                              <DropShadow />
+                           </effect></Button>
+                        <Pane layoutX="10.0" layoutY="10.0" prefHeight="64.0" prefWidth="5.0" />
+                        <Button fx:id="playBtn" layoutX="62.0" layoutY="10.0" mnemonicParsing="false" onKeyPressed="#sKeyPressed" onMouseClicked="#playBtnClicked" onMouseEntered="#playBtnEntered" onMouseExited="#playBtnExited" prefHeight="42.0" prefWidth="63.0" style="-fx-background-radius: 0px; -fx-background-color: #0c4d5c; -fx-border-radius: 5px;" text="Play" textFill="#ffffff">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                           <font>
+                              <Font size="13.0" />
+                           </font></Button>
+                        <Pane layoutX="236.0" layoutY="10.0" prefHeight="64.0" prefWidth="5.0" />
+                        <Button fx:id="nextBtn" layoutX="114.0" layoutY="10.0" mnemonicParsing="false" onKeyPressed="#nKeyPressed" onMouseClicked="#nextBtnClicked" onMouseEntered="#nextBtnEntered" onMouseExited="#nextBtnExited" prefHeight="42.0" prefWidth="63.0" style="-fx-background-radius: 0px; -fx-background-color: #0c4d5c; -fx-border-radius: 0px;" text="Next" textFill="#ffffff">
+                           <effect>
+                              <DropShadow blurType="GAUSSIAN" />
+                           </effect>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Button>
+                        <Pane layoutX="266.0" layoutY="10.0" prefHeight="64.0" prefWidth="5.0" />
+                        <Button fx:id="repeatBtn" layoutX="166.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#repeatBtnClicked" onMouseEntered="#repeatBtnEntered" onMouseExited="#repeatBtnExited" prefHeight="42.0" prefWidth="63.0" style="-fx-background-radius: 0px; -fx-background-color: #0c4d5c; -fx-border-radius: 0px;" text="Repeat" textFill="#ffffff">
+                           <effect>
+                              <DropShadow blurType="GAUSSIAN" />
+                           </effect>
+                           <font>
+                              <Font size="13.0" />
+                           </font></Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="100.0" prefWidth="187.0">
+               <children>
+                  <Pane prefHeight="17.0" prefWidth="181.0" />
+                  <HBox prefHeight="25.0" prefWidth="168.0">
+                     <children>
+                        <Button fx:id="muteBtn" mnemonicParsing="false" onMouseClicked="#muteBtnClicked" onMouseEntered="#muteBtnEntered" onMouseExited="#muteBtnExited" prefHeight="31.0" prefWidth="55.0" style="-fx-background-radius: 0px; -fx-background-color: #0c4d5c; -fx-border-radius: 100px;" text="Mute" textFill="#ffffff">
+                           <effect>
+                              <DropShadow />
+                           </effect></Button>
+                        <Pane prefHeight="31.0" prefWidth="19.0" />
+                        <Slider fx:id="volumeSeeker" onMouseClicked="#volumeSeekerClicked" onMouseDragged="#volumeSeekerDragged" prefHeight="14.0" prefWidth="118.0">
+                           <effect>
+                              <DropShadow />
+                           </effect></Slider>
+                     </children>
+                  </HBox>
+                  <Pane prefHeight="24.0" prefWidth="160.0" />
+                  <Pane prefHeight="60.0" prefWidth="160.0" />
+               </children>
+            </VBox>
+         </children>
+         <effect>
+            <DropShadow spread="0.45" />
+         </effect>
+      </HBox>
+   </bottom>
+   <center>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #949e9c;" BorderPane.alignment="CENTER">
+         <content>
+            <ListView fx:id="songListView" onMouseClicked="#songListViewClicked" prefHeight="358.0" prefWidth="576.0">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </ListView>
+         </content>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ScrollPane>
+   </center>
+</BorderPane>
